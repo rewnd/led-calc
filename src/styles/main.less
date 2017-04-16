@@ -1,0 +1,32 @@
+/* общие миксины */
+
+@import 'helpers/mixins.less';
+
+/* переменные */
+
+@import 'variables.less';
+
+/* Общие стили для body  */
+
+body,
+html {
+  .font-inject(@default-font, 14px, normal, #000000, 18px);
+}
+
+/* плагины */
+
+@import 'ui_elements/jnumeric-input.less'; //цифровой ввод с +/-
+@import 'ui_elements/jquery.range.less'; //слайдер напряжения
+@import 'ui_elements/dd.less'; //продвинутый селект
+
+//основные стили калькулятора
+
+@import 'led-calc.less';
+
+//спиннер загрузки
+
+@import 'ui_elements/loading-spinner.less';
+
+//спрайты
+
+@import '../../tmp/sprite.less';

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>LED-калькулятор</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+</head>
+<body>
+<div class="led-calc-container">
+
+<h1 class="led-calc-header-main">Калькулятор гасящего сопротивления для светодиодов - DEMO</h1>
+
+<div class="led-calc-wrapper clearfix">
+
+  <div class="loader-overlay"><div class="loader-spinner-wrapper"><div class="loader-spinner"></div></div></div>
+
+  <form action="#" class="led-calc-form col-50">
+
+    <p class="led-calc-voltage">Напряжение источника питания: <b class="led-calc-voltage-val">5</b> вольт</p>
+    <input type="hidden" class="led-calc-slider led-calc-slider" value="0" id="led-calc-voltage-slider">
+
+    <div class="led-calc-form-string">
+      <div id="led-select-cont"></div>
+    </div>
+
+    <div class="led-calc-form-string">
+      <label for="num-1" class="led-calc-label">Прямое напряжение светодиода:</label>
+      <input type="number" min = "1" val="2.5" step="0.1" max="12" class="led-calc-input-numeric" id="voltage-input"> <span>вольт (В)</span>
+    </div>
+
+    <div class="led-calc-form-string">
+      <label for="num-2" class="led-calc-label">Прямой ток светодиода:</label>
+      <input type="number" min = "0" val="10" step="1" max="100" class="led-calc-input-numeric" id="current-input"> <span>миллиампер (мА)</span>
+    </div>
+
+    <p class="led-calc-instructions">Инструкция: выберите напряжение источника питания, прямое напряжение и ток светодиода. Также можно выбрать модель светодиода из списка - параметры автоматически подставятся в нужные поля. Для расчета нажмите "Рассчитать", для распечатки схемы и параметров - "Печать". Калькулятор написан в рамках изучения jQuery и CSS3, я не несу ответственности за результаты расчетов и последствия их применения. Спасибо за идею и (частично) графику сайту <a href="cxem.net/calc/ledcalc.php">cxem.net</a>.</p>
+
+  </form>
+
+  <div class="led-calc-results col-50">
+    <div id="print-container">
+      <div class="led-calc-circuit">
+        <img src="img/circuit.png" alt="">
+        <div class="led-calc-circuit-r-val-cont"><span>270 Ом 0.125 Вт</span></div>
+        <div class="led-calc-circuit-v-val-cont"><span>5</span> V</div>
+      </div>
+      <p class="led-calc-result-string">Параметры светодиода: <span class="led-calc-led-model">2.5 В 10 мА</span></p>
+      <p class="led-calc-result-string">Расчетное сопротивление резистора: <span class="led-calc-r-calculated">1.3 кОм</span></p>
+      <p class="led-calc-result-string">Рассеиваемая на резисторе мощность: <span class="led-calc-p">0.125 Вт</span></p>
+      <p class="led-calc-result-string">Номинал резистора: <span class="led-calc-r-standard">1.3 кОм 0.125 Вт</p>
+    </div>
+    <div class="led-calc-btn-container">
+      <button class="led-calc-btn led-calc-btn" id="led-calc">Рассчитать</button>
+      <button class="led-calc-btn led-calc-btn" id="led-print">Напечатать</button>
+    </div>
+  </div>
+
+</div>
+
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

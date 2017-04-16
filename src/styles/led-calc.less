@@ -1,0 +1,151 @@
+// селекты и опции
+
+.led-calc-select {
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 35px;
+    border: 2px solid @input-border-color;
+    border-radius: 5px;
+    background-color: transparent;
+    .font-inject(@default-font, 14px, normal, #000000, 18px);
+    &:focus,
+    &:active {
+      outline: none;
+      border: 2px solid @input-border-color-active;
+    }
+  option {
+    border-radius: 5px;
+  }
+}
+
+/* кнопки */
+
+.led-calc-btn {
+  position: relative;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid @btn-color;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: @btn-color;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    background-color: @btn-color;
+    color: #fff;
+  }
+  &:active {
+    top: 2px;
+    left: 2px;
+  }
+}
+
+//заголовок для формы
+
+.led-calc-header-main {
+  .font-inject(@default-font, 20px, bold, #000000, 24px);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+//собственно форма
+
+.led-calc-wrapper {
+  margin: 0 auto;
+  border: 2px solid #ccc;
+  padding: 20px 30px;
+  border-radius: 10px;
+  max-width: 900px;
+  position: relative;
+}
+
+.led-calc-form-string {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.led-calc-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.led-calc-select {
+  max-width: 95%;
+}
+
+.theme-led-calc {
+  margin-bottom: 35px;
+  margin-left: 5px;
+}
+
+.jinput-numeric-wrapper + span {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.led-calc-instructions {
+  font-size: 14px;
+  color: #aaa;
+  text-align: justify;
+
+  a {
+    color: #aaa;
+  }
+}
+
+/* схема и результаты */
+
+.led-calc-circuit {
+    text-align: center;
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  img {
+  width: 320px;//70%;
+  height: auto;
+  padding: 0 30px;
+  margin-left: 10%;
+  }
+}
+
+.led-calc-circuit-r-val-cont {
+  position: absolute;
+  top: 105px;
+  width: 200px;
+  left: 35%;
+  user-select: none;
+  text-align: center;
+}
+
+.led-calc-circuit-v-val-cont {
+  position: absolute;
+  top: 160px;
+  left: 18%;
+  width: 100px;
+  user-select: none;
+  text-align: center;
+}
+
+.led-calc-result-string {
+  margin: 0;
+  margin-bottom: 5px;
+  line-height: 18px;
+  margin-left: 10%;
+  span {
+    font-weight: 600;
+  }
+}
+
+.led-calc-btn-container {
+  margin-top: 15px;
+  text-align: center;
+  .led-calc-btn:first-child {
+    margin-left: 10%;
+    margin-right: 15px;
+  }
+}

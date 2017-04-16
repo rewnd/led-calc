@@ -1,0 +1,54 @@
+/* Apply this on parent css-rule */
+
+.clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.font-face(@fontname, @fontfilename, @fontweight:normal, @fontstyle:normal) {
+  font-family: "@{fontname}";
+  src: url("../fonts/@{fontfilename}.eot");
+  src: url("../fonts/@{fontfilename}.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/@{fontfilename}.woff") format("woff");
+  font-weight: @fontweight;
+  font-style: @fontstyle;
+}
+
+.font-inject(@fontname, @fontsize, @fontweight: normal, @fontcolor: #000000, @lineheight: 1.3em, @familytype: "sans-serif") when (@familytype=serif) {
+  font-family: "@{fontname}", "Times New Roman", "Times", serif;
+  font-size: @fontsize;
+  font-weight: @fontweight;
+  line-height: @lineheight;
+  color: @fontcolor;
+}
+
+.font-inject(@fontname, @fontsize, @fontweight: normal, @fontcolor: #000000, @lineheight: 1.3em, @familytype: "sans-serif") when not (@familytype=serif) {
+  font-family: "@{fontname}", "Arial", "Helvetica", sans-serif;
+  font-size: @fontsize;
+  font-weight: @fontweight;
+  line-height: @lineheight;
+  color: @fontcolor;
+}
+
+.wrapper(@width) {
+  width: @width;
+  margin: 0 auto;
+}
+
+// колонки
+
+.col-25 {
+  width: 25%;
+}
+
+.col-50 {
+  width: 50%;
+  float: left;
+}
+
+.clearfix {
+  .clearfix();
+}
